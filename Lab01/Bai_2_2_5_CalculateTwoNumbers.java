@@ -3,8 +3,15 @@ import javax.swing.JOptionPane;
 public class Bai_2_2_5_CalculateTwoNumbers {
     public static void main(String[] args) {
 
-        String strNum1 = JOptionPane.showInputDialog(null, "Please input the first number:", "Input First Number", JOptionPane.INFORMATION_MESSAGE);
-        String strNum2 = JOptionPane.showInputDialog(null, "Please input the second number:", "Input Second Number", JOptionPane.INFORMATION_MESSAGE);
+        String strNum1 = JOptionPane.showInputDialog(null,
+                "Vui lòng nhập số đầu tiên:",
+                "Nhập số thứ nhất",
+                JOptionPane.INFORMATION_MESSAGE);
+
+        String strNum2 = JOptionPane.showInputDialog(null,
+                "Vui lòng nhập số thứ 2:",
+                "Nhập số thứ 2",
+                JOptionPane.INFORMATION_MESSAGE);
 
         double num1 = Double.parseDouble(strNum1);
         double num2 = Double.parseDouble(strNum2);
@@ -13,22 +20,22 @@ public class Bai_2_2_5_CalculateTwoNumbers {
         double difference = num1 - num2;
         double product = num1 * num2;
 
-
         String quotient;
         if (num2 != 0) {
             quotient = String.valueOf(num1 / num2);
         } else {
-            quotient = "Undefined";
+            quotient = "Không xác định (không thể chia cho 0)";
         }
 
+        String result = "Tổng: " + sum + "\n" +
+                "Hiệu: " + difference + "\n" +
+                "Tích: " + product + "\n" +
+                "Thương: " + quotient;
 
-        String result = "Sum: " + sum + "\n" +
-                "Difference: " + difference + "\n" +
-                "Product: " + product + "\n" +
-                "Quotient: " + quotient;
-
-
-        JOptionPane.showMessageDialog(null, result, "Results", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,
+                result,
+                "Kết quả tính toán",
+                JOptionPane.INFORMATION_MESSAGE);
 
         System.exit(0);
     }
