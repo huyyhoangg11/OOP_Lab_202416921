@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Bai_2_2_6_EquationSolver {
+public class EquationSolver {
 
     public static void main(String[] str) {
         String[] options = {"Giai phuong trinh bac nhat", "Giai he phuong trinh", "Giai phuong trinh bac 2"};

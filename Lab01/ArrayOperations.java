@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Bai_6_5_ArrayOperations {
+public class ArrayOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
