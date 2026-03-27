@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class CalculateTwoNumbers {
+public class Bai_2_2_5_CalculateTwoNumbers {
     public static void main(String[] args) {
 
         String strNum1 = JOptionPane.showInputDialog(null, "Please input the first number:", "Input First Number", JOptionPane.INFORMATION_MESSAGE);
