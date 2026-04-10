@@ -1,37 +1,38 @@
 public class DigitalVideoDisc {
-    // Mục 8: Khai báo các thuộc tính private
+    // MỤC 16: CLASS MEMBERS VÀ INSTANCE MEMBERS
+
+    // Thuộc tính của Lớp (Class member) - Dung chung cho tất cả đối tượng
+    private static int nbDigitalVideoDiscs = 0;
+
+    // Thuộc tính của Đối tượng (Instance members) - Riêng biệt cho từng đối tượng
+    private int id;
     private String title;
     private String category;
     private String director;
     private int length;
     private float cost;
 
-    // Mục 10: Các hàm khởi tạo nạp chồng (Constructor Overloading)
+    // -------------------------------------------------------------------
+    // CÁC HÀM KHỞI TẠO (CONSTRUCTORS)
+    // Cập nhật: Tăng biến đếm tổng và gán ID mỗi khi tạo đối tượng mới
+    // -------------------------------------------------------------------
 
-    // 10.1. Khởi tạo qua Tiêu đề
     public DigitalVideoDisc(String title) {
         super();
         this.title = title;
+        nbDigitalVideoDiscs++; // Tăng tổng số lượng DVD lên 1
+        this.id = nbDigitalVideoDiscs; // Gán ID bằng số lượng hiện tại
     }
 
-    // 10.2. Khởi tạo qua Thể loại, Tiêu đề và Giá
     public DigitalVideoDisc(String category, String title, float cost) {
         super();
         this.category = category;
         this.title = title;
         this.cost = cost;
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
     }
 
-    // 10.3. Khởi tạo qua Đạo diễn, Thể loại, Tiêu đề và Giá
-    public DigitalVideoDisc(String director, String category, String title, float cost) {
-        super();
-        this.director = director;
-        this.category = category;
-        this.title = title;
-        this.cost = cost;
-    }
-
-    // 10.4. Khởi tạo qua tất cả các thuộc tính
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super();
         this.title = title;
@@ -39,11 +40,25 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
     }
 
-    // Mục 9: Các phương thức Getter (Chỉ lấy dữ liệu, không thay đổi dữ liệu)
+    // -------------------------------------------------------------------
+    // GETTERS VÀ SETTERS
+    // -------------------------------------------------------------------
+
+    public int getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
+    }
+
+    // Setter tạm thời từ Mục 15
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getCategory() {
@@ -60,10 +75,5 @@ public class DigitalVideoDisc {
 
     public float getCost() {
         return cost;
-    }
-
-    // Setter tạm thời phục vụ Mục 15
-    public void setTitle(String title) {
-        this.title = title;
     }
 }
