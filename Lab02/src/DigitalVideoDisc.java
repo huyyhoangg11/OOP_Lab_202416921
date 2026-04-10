@@ -61,4 +61,9 @@ public class DigitalVideoDisc {
     public float getCost() {
         return cost;
     }
+
+    // Setter tạm thời phục vụ Mục 15
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
