@@ -8,7 +8,9 @@ public class Cart {
     // Số lượng DVD hiện có thực tế trong giỏ hàng
     private int qtyOrdered = 0;
 
-    // Thêm một DVD vào giỏ hàng [cite: 642]
+    // PHƯƠNG THỨC GỐC VÀ NẠP CHỒNG (MỤC 11 & 14)
+
+    // 1. Thêm MỘT DVD vào giỏ hàng (Phương thức gốc)
     public void addDigitalVideoDisc(DigitalVideoDisc disc) {
         // Kiểm tra xem giỏ hàng đã đầy chưa
         if (qtyOrdered < MAX_NUMBERS_ORDERED) {
@@ -19,6 +21,22 @@ public class Cart {
             System.out.println("The cart is almost full"); // Thông báo khi đầy [cite: 647]
         }
     }
+
+    // 2. Thêm danh sách DVD sử dụng Varargs (Mục 14.1) [cite: 702]
+    // Cho phép truyền vào số lượng tham số tùy ý (ví dụ: addDigitalVideoDisc(dvd1, dvd2, dvd3))
+    public void addDigitalVideoDisc(DigitalVideoDisc... dvdList) {
+        for (DigitalVideoDisc disc : dvdList) {
+            addDigitalVideoDisc(disc); // Gọi lại phương thức gốc để tận dụng logic kiểm tra số lượng
+        }
+    }
+
+    // 3. Thêm chính xác 2 DVD vào giỏ hàng (Mục 14.2) [cite: 704, 706-708]
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        addDigitalVideoDisc(dvd1); // Gọi lại phương thức gốc
+        addDigitalVideoDisc(dvd2); // Gọi lại phương thức gốc
+    }
+
+    // CÁC PHƯƠNG THỨC KHÁC
 
     // Xóa một DVD khỏi giỏ hàng
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
