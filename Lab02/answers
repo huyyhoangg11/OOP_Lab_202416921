@@ -1,9 +1,0 @@
-Question 1: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
-
-
-Answer: Bởi vì Java sử dụng Pass by Value (Truyền tham trị). Khi truyền đối tượng vào hàm swap, Java thực chất copy "địa chỉ ô nhớ" (reference) của đối tượng đó. Biến o1 và o2 trong hàm swap chỉ là các bản sao. Việc hoán đổi o1 và o2 chỉ làm thay đổi biến cục bộ bên trong hàm swap, hoàn toàn không ảnh hưởng đến biến jungleDVD và cinderellaDVD ở hàm main. Do đó, hai đĩa DVD không hề bị hoán đổi.
-
-
-Question 2: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
-
-Answer: Trong hàm changeTitle, tham số dvd (bản sao) vẫn trỏ tới cùng một địa chỉ bộ nhớ với đối tượng jungleDVD gốc. Khi gọi dvd.setTitle(title), nó trực tiếp can thiệp và thay đổi dữ liệu của đối tượng gốc đó trong bộ nhớ. Câu lệnh dvd = new DigitalVideoDisc(oldTitle) ở dòng sau chỉ làm cho bản sao dvd trỏ sang một vùng nhớ mới, chứ không đảo ngược được sự thay đổi đã xảy ra trước đó trên đối tượng gốc. Điều này chứng minh Java luôn trích xuất giá trị của tham chiếu để thao tác (Pass by Value của Reference).
