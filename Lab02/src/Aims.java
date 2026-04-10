@@ -24,5 +24,10 @@ public class Aims {
 
         System.out.println("\nAfter removing Star Wars:");
         anOrder.displayCart();
+
+        // Test Mục 16: Kiểm tra ID của các đĩa DVD
+        // System.out.println("ID of dvd1 (The Lion King): " + dvd1.getId());
+        // System.out.println("ID of dvd2 (Star Wars): " + dvd2.getId());
+        // System.out.println("ID of dvd3 (Aladin): " + dvd3.getId());
     }
 }
