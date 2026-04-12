@@ -16,7 +16,7 @@
 
     Question: Is JAVA a Pass by Value or a Pass by Reference programming language?
 
-    Answer: Java hoàn toàn là ngôn ngữ Truyền tham trị (Pass by Value).
+    Answer: Java hoàn toàn là ngôn ngữ Truyền tham trị.
 
 
     Question: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
