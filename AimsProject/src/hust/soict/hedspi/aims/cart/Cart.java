@@ -1,3 +1,5 @@
+package hust.soict.hedspi.aims.cart;
+
 public class Cart {
     // Số lượng DVD tối đa cho phép trong giỏ hàng
     public static final int MAX_NUMBERS_ORDERED = 20;
