@@ -32,6 +32,7 @@ public abstract class Media {
     public float getCost() { return cost; }
     public void setCost(float cost) { this.cost = cost; }
 
+    // Overridden equals method for comparing objects
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {

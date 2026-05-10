@@ -18,6 +18,7 @@ public class Track implements Playable {
         System.out.println("Track length: " + this.getLength());
     }
 
+    // Overridden equals method for comparing objects
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
