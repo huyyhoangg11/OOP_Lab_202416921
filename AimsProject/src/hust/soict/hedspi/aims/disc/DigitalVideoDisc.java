@@ -78,4 +78,19 @@ public class DigitalVideoDisc {
     public float getCost() {
         return cost;
     }
+
+    // Ghi đè phương thức toString() để trả về thông tin DVD theo định dạng
+    @Override
+    public String toString() {
+        return this.title + " - " + this.category + " - " + this.director + " - " + this.length + ": " + this.cost + " $";
+    }
+
+    // Kiểm tra xem tiêu đề đĩa có khớp với từ khóa tìm kiếm không
+    public boolean isMatch(String title) {
+        if (this.title == null || title == null) {
+            return false;
+        }
+        // So sánh không phân biệt hoa thường, kiểm tra xem tiêu đề có chứa từ khóa không
+        return this.title.toLowerCase().contains(title.toLowerCase());
+    }
 }
