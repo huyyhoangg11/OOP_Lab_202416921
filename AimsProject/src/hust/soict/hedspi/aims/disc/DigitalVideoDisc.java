@@ -1,3 +1,5 @@
+package hust.soict.hedspi.aims.disc;
+
 public class DigitalVideoDisc {
     // MỤC 16: CLASS MEMBERS VÀ INSTANCE MEMBERS
 

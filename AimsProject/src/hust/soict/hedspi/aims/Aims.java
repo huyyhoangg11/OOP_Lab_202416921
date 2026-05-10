@@ -1,3 +1,7 @@
+package hust.soict.hedspi.aims;
+
+import hust.soict.hedspi.aims.cart.Cart;
+
 public class Aims {
     public static void main(String[] args) {
         // 1. Tạo một giỏ hàng mới
