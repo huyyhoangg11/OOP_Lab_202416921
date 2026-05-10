@@ -1,6 +1,6 @@
 package hust.soict.hedspi.test.cart;
 import hust.soict.hedspi.aims.cart.Cart;
-import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 
 public class CartTest {
     public static void main(String[] args) {
@@ -12,12 +12,12 @@ public class CartTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", 18.99f);
 
         // them vao cart
-        cart.addDigitalVideoDisc(dvd1);
-        cart.addDigitalVideoDisc(dvd2);
-        cart.addDigitalVideoDisc(dvd3);
+        cart.addMedia(dvd1);
+        cart.addMedia(dvd2);
+        cart.addMedia(dvd3);
 
         // in ra
-        cart.displayCart();
+        cart.print();
 
         // Test tìm kiếm theo ID
         cart.searchById(1); // Giả sử tìm DVD có ID là 1

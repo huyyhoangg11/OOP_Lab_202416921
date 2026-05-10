@@ -1,7 +1,7 @@
 package hust.soict.hedspi.aims;
 
 import hust.soict.hedspi.aims.cart.Cart;
-import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 
 public class Aims {
     public static void main(String[] args) {
@@ -11,24 +11,24 @@ public class Aims {
         // 2. Tạo các đối tượng DVD với dữ liệu mẫu từ tài liệu
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King",
                 "Animation", "Roger Allers", 87, 19.95f);
-        anOrder.addDigitalVideoDisc(dvd1);
+        anOrder.addMedia(dvd1);
 
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars",
                 "Science Fiction", "George Lucas", 87, 24.95f);
-        anOrder.addDigitalVideoDisc(dvd2);
+        anOrder.addMedia(dvd2);
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin",
                 "Animation", 18.99f);
-        anOrder.addDigitalVideoDisc(dvd3);
+        anOrder.addMedia(dvd3);
 
         // 3. Hiển thị giỏ hàng và tổng chi phí trước khi xóa
-        anOrder.displayCart();
+        anOrder.print();
 
         // 4. Mục 13: Thử nghiệm xóa một DVD và kiểm tra lại
-        anOrder.removeDigitalVideoDisc(dvd2);
+        anOrder.removeMedia(dvd2);
 
         System.out.println("\nAfter removing Star Wars:");
-        anOrder.displayCart();
+        anOrder.print();
 
         // Test Mục 16: Kiểm tra ID của các đĩa DVD
         // System.out.println("ID of dvd1 (The Lion King): " + dvd1.getId());
