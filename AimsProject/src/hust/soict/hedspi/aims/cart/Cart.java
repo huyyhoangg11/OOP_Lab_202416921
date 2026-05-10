@@ -68,4 +68,8 @@ public class Cart {
             System.out.println("No match found for ID: " + id);
         }
     }
+
+    public ArrayList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
 }
