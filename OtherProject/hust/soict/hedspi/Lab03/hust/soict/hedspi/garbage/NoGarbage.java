@@ -1,26 +1,25 @@
-package hust.soict.hedspi.garbage;
+package hust.soict.hedspi.Lab03.hust.soict.hedspi.garbage;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class GarbageCreator {
+public class NoGarbage {
     public static void main(String[] args) {
-        String filename = "test.txt"; // Tạo file test.txt cùng cấp với thư mục src
+        String filename = "test.txt";
         byte[] inputBytes = { 0 };
         long startTime, endTime;
 
         try {
             inputBytes = Files.readAllBytes(Paths.get(filename));
             startTime = System.currentTimeMillis();
-            String outputString = "";
+            StringBuilder outputStringBuilder = new StringBuilder();
             for (byte b : inputBytes) {
-                outputString += (char)b;
+                outputStringBuilder.append((char)b);
             }
             endTime = System.currentTimeMillis();
-            System.out.println("Time with String (+): " + (endTime - startTime) + " ms");
+            System.out.println("Time with StringBuilder: " + (endTime - startTime) + " ms");
         } catch (IOException e) {
-            System.out.println("Không tìm thấy file. Hãy tạo file test.txt!");
             e.printStackTrace();
         }
     }
