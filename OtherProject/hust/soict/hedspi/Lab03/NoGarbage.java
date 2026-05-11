@@ -1,4 +1,4 @@
-package hust.soict.hedspi.Lab03.hust.soict.hedspi.garbage;
+package hust.soict.hedspi.Lab03;
 
 import java.io.IOException;
 import java.nio.file.Files;
