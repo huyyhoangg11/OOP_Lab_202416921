@@ -1,0 +1,18 @@
+Mặc dù việc lập trình với AWT và Swing khá giống nhau về mặt cấu trúc (cùng sử dụng container, components và cơ chế event-handling), nhưng chúng có một số điểm khác biệt quan trọng sau:
+
+1. Containers cấp cao nhất (Top-level containers):
+    AWT: Sử dụng Frame làm container cấp cao nhất, các thành phần có thể được thêm (add()) trực tiếp vào Frame .
+    Swing: Sử dụng JFrame. Tuy nhiên, các thành phần không thể được thêm trực tiếp vào JFrame mà phải được thêm thông qua Content-pane (bằng cách sử dụng phương thức getContentPane().add()) .
+
+2. Tên lớp của các thành phần (Component class names):
+    Tên các lớp thành phần trong Swing tương tự như trong AWT nhưng được thêm tiền tố "J" ở đầu .
+    Ví dụ: AWT dùng Button, Label, TextField thì Swing tương ứng sẽ dùng JButton, JLabel, JTextField.
+
+3. Xử lý sự kiện (Event-handling):
+    Cả AWT và Swing đều chia sẻ chung một cơ chế xử lý sự kiện (Event-handling).
+    Cả hai đều sử dụng cùng các interface và class từ gói java.awt.event.* như ActionListener và ActionEvent. Đoạn code thiết lập listener hoàn toàn không có sự khác biệt.
+
+4. Giao diện hiển thị (Appearance):
+    Do AWT sử dụng các thành phần phụ thuộc chặt chẽ vào hệ điều hành (heavyweight components), giao diện của nó trông sẽ giống hệt với giao diện các ứng dụng native của hệ điều hành đó .
+    Swing sử dụng các thành phần vẽ bằng Java (lightweight components), do đó nó có thể cung cấp các giao diện nhất quán, mượt mà trên mọi nền tảng (Look and Feel) và hiển thị có phần khác biệt/hiện đại hơn so với AWT.
+
