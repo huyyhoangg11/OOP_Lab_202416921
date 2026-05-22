@@ -4,14 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import hust.soict.hedspi.aims.store.Store;
-import hust.soict.hedspi.aims.media.Media;
 
-public class StoreManagerScreen extends JFrame {
-    private Store store;
+public abstract class AddItemToStoreScreen extends JFrame {
+    protected Store store;
 
-    public StoreManagerScreen(Store store) {
+    public AddItemToStoreScreen(Store store, String title) {
         this.store = store;
 
         Container cp = getContentPane();
@@ -20,7 +18,7 @@ public class StoreManagerScreen extends JFrame {
         cp.add(createNorth(), BorderLayout.NORTH);
         cp.add(createCenter(), BorderLayout.CENTER);
 
-        setTitle("Store");
+        setTitle(title);
         setSize(1024, 768);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,38 +67,27 @@ public class StoreManagerScreen extends JFrame {
         JPanel header = new JPanel();
         header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
 
-        JLabel title = new JLabel("AIMS");
-        title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 50));
-        title.setForeground(Color.CYAN);
+        JLabel titleLabel = new JLabel("AIMS - Update System");
+        titleLabel.setFont(new Font(titleLabel.getFont().getName(), Font.PLAIN, 50));
+        titleLabel.setForeground(Color.CYAN);
 
         header.add(Box.createRigidArea(new Dimension(10, 10)));
-        header.add(title);
+        header.add(titleLabel);
         header.add(Box.createHorizontalGlue());
         header.add(Box.createRigidArea(new Dimension(10, 10)));
 
         return header;
     }
 
-    JPanel createCenter() {
-        JPanel center = new JPanel();
-        center.setLayout(new GridLayout(3, 3, 2, 2));
-
-        ArrayList<Media> mediaInStore = store.getItemsInStore();
-        int limit = Math.min(mediaInStore.size(), 9);
-        for (int i = 0; i < limit; i++) {
-            MediaStore cell = new MediaStore(mediaInStore.get(i));
-            center.add(cell);
-        }
-
-        return center;
-    }
+    protected abstract JPanel createCenter();
 
     private class MenuListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String command = e.getActionCommand();
             if (command.equals("View store")) {
-                // Đã ở sẵn View Store, không cần chuyển đổi
+                new StoreManagerScreen(store);
+                dispose();
             } else if (command.equals("Add Book")) {
                 new AddBookToStoreScreen(store);
                 dispose();
