@@ -3,6 +3,7 @@ package hust.soict.hedspi.aims.screen.customer.controller;
 import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.store.Store;
+import hust.soict.hedspi.aims.screen.customer.AimsCustomerApp;
 
 import java.io.IOException;
 
@@ -60,6 +61,6 @@ public class ViewStoreController {
 
     @FXML
     void btnViewCartPressed(ActionEvent event) {
-        System.out.println("View cart button pressed");
+        AimsCustomerApp.showCartScreen();
     }
 }
