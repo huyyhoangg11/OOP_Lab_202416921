@@ -74,4 +74,12 @@ public class Cart {
     public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
+
+    public void clear() {
+        itemsOrdered.clear();
+    }
+
+    public boolean isEmpty() {
+        return itemsOrdered.isEmpty();
+    }
 }

@@ -48,9 +48,9 @@ public class ItemController {
         cart.addMedia(media);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Add to cart");
+        alert.setTitle("Add to Cart");
         alert.setHeaderText(null);
-        alert.setContentText("Added \"" + media.getTitle() + "\" to cart.");
+        alert.setContentText(media.getTitle() + " has been added to the cart.");
         alert.showAndWait();
     }
 
