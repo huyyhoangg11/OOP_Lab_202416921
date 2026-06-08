@@ -3,6 +3,7 @@ package hust.soict.hedspi.aims.screen.customer.controller;
 import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.media.Playable;
+import hust.soict.hedspi.aims.screen.customer.AimsCustomerApp;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -134,6 +135,6 @@ public class CartController {
 
     @FXML
     void btnViewStorePressed(ActionEvent event) {
-        System.out.println("View store button pressed");
+        AimsCustomerApp.showStoreScreen();
     }
 }
