@@ -1,7 +1,8 @@
 package hust.soict.hedspi.aims.store;
 
-import hust.soict.hedspi.aims.media.Media;
 import java.util.ArrayList;
+import java.util.List;
+import hust.soict.hedspi.aims.media.Media;
 
 public class Store {
     // Chuyển sang dùng ArrayList cho Store
