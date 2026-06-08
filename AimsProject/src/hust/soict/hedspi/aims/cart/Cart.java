@@ -1,11 +1,12 @@
 package hust.soict.hedspi.aims.cart;
 
 import hust.soict.hedspi.aims.media.Media;
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
-    // Sử dụng ArrayList thay vì mảng tĩnh để chứa Media (gồm cả Book, CD, DVD)
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    // Dùng ObservableList để JavaFX TableView có thể tự cập nhật khi thêm/xóa Media
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
     public void addMedia(Media media) {
         if (!itemsOrdered.contains(media)) {
@@ -51,17 +52,18 @@ public class Cart {
                 found = true;
             }
         }
-        if (!found) System.out.println("No match found for title: " + title);
+        if (!found) {
+            System.out.println("No match found for title: " + title);
+        }
     }
 
-    // Tìm kiếm theo ID
     public void searchById(int id) {
         boolean found = false;
         for (Media m : itemsOrdered) {
             if (m.getId() == id) {
                 System.out.println("Found match: " + m.toString());
                 found = true;
-                break; // Tìm thấy rồi thì thoát vòng lặp luôn
+                break;
             }
         }
         if (!found) {
@@ -69,7 +71,7 @@ public class Cart {
         }
     }
 
-    public ArrayList<Media> getItemsOrdered() {
+    public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
 }
