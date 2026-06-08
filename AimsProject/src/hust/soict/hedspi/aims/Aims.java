@@ -3,6 +3,8 @@ package hust.soict.hedspi.aims;
 import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.*;
 import hust.soict.hedspi.aims.store.Store;
+import hust.soict.hedspi.aims.exception.PlayerException;
+import hust.soict.hedspi.aims.media.Playable;
 
 import java.util.Collections;
 import java.util.Scanner;
@@ -126,7 +128,13 @@ public class Aims {
                     Media mediaPlay = findMediaInStore(titlePlay);
                     if (mediaPlay != null) {
                         if (mediaPlay instanceof Playable) {
-                            ((Playable) mediaPlay).play();
+                            try {
+                                ((Playable) mediaPlay).play();
+                            } catch (PlayerException e) {
+                                System.err.println(e.getMessage());
+                                System.err.println(e.toString());
+                                e.printStackTrace();
+                            }
                         } else {
                             System.out.println("This media is not playable (e.g., Book).");
                         }
@@ -157,7 +165,13 @@ public class Aims {
                     break;
                 case 2:
                     if (media instanceof Playable) {
-                        ((Playable) media).play();
+                        try {
+                            ((Playable) media).play();
+                        } catch (PlayerException e) {
+                            System.err.println(e.getMessage());
+                            System.err.println(e.toString());
+                            e.printStackTrace();
+                        }
                     } else {
                         System.out.println("This media cannot be played.");
                     }
@@ -234,9 +248,17 @@ public class Aims {
                 case 4:
                     System.out.print("Enter title to play: ");
                     String titlePlay = scanner.nextLine();
+
                     Media mPlay = findMediaInCart(titlePlay);
+
                     if (mPlay != null && mPlay instanceof Playable) {
-                        ((Playable) mPlay).play();
+                        try {
+                            ((Playable) mPlay).play();
+                        } catch (PlayerException e) {
+                            System.err.println(e.getMessage());
+                            System.err.println(e.toString());
+                            e.printStackTrace();
+                        }
                     } else {
                         System.out.println("Not found or not playable.");
                     }

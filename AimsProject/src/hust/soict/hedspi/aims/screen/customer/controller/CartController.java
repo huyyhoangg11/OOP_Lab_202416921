@@ -4,6 +4,7 @@ import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.media.Playable;
 import hust.soict.hedspi.aims.screen.customer.AimsCustomerApp;
+import hust.soict.hedspi.aims.exception.PlayerException;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -153,12 +154,16 @@ public class CartController {
         if (selectedMedia instanceof Playable) {
             try {
                 ((Playable) selectedMedia).play();
-            } catch (Exception e) {
+            } catch (PlayerException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Play Error");
+                alert.setTitle("Player Exception");
                 alert.setHeaderText("Cannot play media");
-                alert.setContentText(e.getMessage());
+                alert.setContentText(e.toString());
                 alert.showAndWait();
+
+                System.err.println(e.getMessage());
+                System.err.println(e.toString());
+                e.printStackTrace();
             }
         }
     }
