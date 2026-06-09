@@ -1,0 +1,3 @@
+Question (Section 11): The Aims class must be updated to handle any exceptions generated when the play() methods are called. What happens when you don't update for them to catch?
+
+Answer: Should the Aims class lack the necessary updates to catch a PlayerException triggered by the play() methods, the exception will simply pass up the call stack to the main method. Since main doesn't handle it either, the JVM will be forced to crash the program entirely and dump the error's stack trace to the console (System.err). By utilizing a try-catch block instead, developers can intercept the error safely, prompt the user with a visual warning (like a Swing or JavaFX dialog), and ensure the application remains active.
